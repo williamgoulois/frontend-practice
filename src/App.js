@@ -1,13 +1,13 @@
-import { ReactComponent as Logo } from './monogram.svg'
-import { ReactComponent as Bag } from './bag.svg'
-import { ReactComponent as Menu } from './menu.svg'
-import { ReactComponent as Instagram } from './instagram.svg'
-import { ReactComponent as Twitter } from './twitter.svg'
-import { ReactComponent as Facebook } from './facebook.svg'
-import { ReactComponent as Youtube } from './youtube.svg'
-import traveler from "./traveler.jpg"
-import modulesHero from "./modules-hero.jpg"
-import moduleImg from "./module.jpg"
+import { ReactComponent as Logo } from './assets/monogram/monogram.svg'
+import { ReactComponent as Bag } from './assets/monogram/bag.svg'
+import { ReactComponent as Menu } from './assets/monogram/menu.svg'
+import { ReactComponent as Instagram } from './assets/monogram/instagram.svg'
+import { ReactComponent as Twitter } from './assets/monogram/twitter.svg'
+import { ReactComponent as Facebook } from './assets/monogram/facebook.svg'
+import { ReactComponent as Youtube } from './assets/monogram/youtube.svg'
+import traveler from "./assets/monogram/traveler.jpg"
+import modulesHero from "./assets/monogram/modules-hero.jpg"
+import moduleImg from "./assets/monogram/module.jpg"
 
 function App() {
   return (
