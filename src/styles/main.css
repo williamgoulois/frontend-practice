@@ -3,237 +3,208 @@
 }
 
 :root {
-  --blue: #1a2456;
-  --white: #f0efed;
-  --lightpink: #efc2b3;
-  --strongpink: #e28f74;
-  --orange: #ff8b68;
-  --breakpoint-xs: 0;
-  --breakpoint-sm: 576px;
+  --breakpoint-sm: 640px;
   --breakpoint-md: 768px;
-  --breakpoint-lg: 992px;
-  --breakpoint-xl: 1200px;
-  --font-family-sans-serif: prompt, sans-serif;
-  --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas,
-    "Liberation Mono", "Courier New", monospace;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1536px;
+  --red: red;
 }
 
 body {
   margin: 0;
-  font-family: var(--font-family-sans-serif);
-  font-size: 1rem;
-  font-weight: 300;
-  line-height: 1.5;
-  color: var(--blue);
-  text-align: left;
-  background-color: var(--white);
+  background-color: white;
+  color: gray;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 .header {
-  z-index: 100;
-  top: 0;
-  position: fixed;
-
-  display: flex;
-
-  color: var(--lightpink);
-
-  margin: auto;
-  padding: 0.5rem;
+  display: inline-flex;
   width: 100%;
+  justify-content: space-between;
+  background: white;
 
-  &__navbar {
-    display: flex;
-    justify-content: space-between;
+  & > * {
+    display: inline-flex;
     align-items: center;
-
-    background-color: var(--blue);
-
-    padding: 0.5em 1em;
-    width: 100%;
-  }
-
-  &__right {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    padding: 1rem;
   }
 
   &__svg {
-    margin-left: 1rem;
+    height: 1em;
+  }
+
+  &__nintendo-bg {
+    background: var(--red);
+  }
+
+  &__nintendo {
+    fill: white;
+  }
+
+  &__login-text {
+    padding-right: 1rem;
+    color: black;
+  }
+}
+
+.hero {
+  width: 100%;
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
   }
 }
 
 .container {
-  margin: 0 1rem;
   display: flex;
-  position: relative;
   flex-direction: column;
+  padding: 1rem;
 }
 
-.product {
-  margin: 1rem 0;
+.underline {
+  display: inline-flex;
+  border-bottom: 2px solid var(--red);
+  line-height: 1.8;
+}
+
+.title {
+  color: black;
+  font-weight: 600;
+  font-size: 1.5em;
+  padding: 1rem 0;
+}
+
+.buy-digital {
+  display: inline-flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 1rem;
+  background: var(--red);
+  border-radius: 8px;
+  color: white;
+  margin-bottom: 0.5em;
+
+  &__text {
+    font-weight: 600;
+  }
+
+  &__arrow-right {
+    height: 1em;
+  }
+}
+
+.buy-points {
+  display: inline-flex;
+  align-items: center;
+
+  &__coin {
+    height: 1.5em;
+    margin-right: 0.5em;
+  }
+
+  &__text {
+    padding: 0.5em 0;
+  }
+}
+
+.text-arrow {
+  display: inline-flex;
+  color: red;
+  font-weight: 600;
+  padding: 1rem 0;
+
+  &__arrow {
+    height: 1em;
+    margin-left: 0.5rem;
+  }
+}
+
+.add-wishlist {
+  display: inline-flex;
+  align-items: center;
+  color: red;
+  font-weight: 600;
+
+  &__heart {
+    height: 2em;
+    margin-right: 0.5rem;
+  }
+
+  &__text {
+    padding: 0.5em 0;
+  }
+}
+
+.carousel {
+  background: lavender;
+}
+
+.carousel-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 2fr 1fr 1fr;
+  grid-gap: 0.5rem;
+
   &__img {
+    border: 1px solid black;
     width: 100%;
     object-fit: contain;
   }
-  &__info {
-    display: flex;
-    justify-content: space-between;
-  }
-  &__title {
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    font-weight: 600;
-    line-height: 1.2;
-    font-size: 1.25rem;
-  }
-  &__price {
-    margin-left: 0.5rem;
+
+  &__video {
+    grid-column-start: 1;
+    grid-column-end: 3;
   }
 }
 
-.sitemap {
-}
-
-.hero-container {
-  display: flex;
-  width: 100%;
-}
-
-.hero-img {
-  width: 100%;
-  height: 300px;
-  object-fit: cover;
-}
-
-.footer {
-  background-color: var(--blue);
-  color: var(--lightpink);
-}
-
-.newsletter {
-  padding: 3rem 0;
-
-  &__title {
-    text-transform: uppercase;
-    font-weight: 600;
+.presentation {
+  position: relative;
+  &__text p {
+    font-weight: 400;
+    color: black;
   }
 
-  &__form {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-right: -5px;
-    margin-left: -5px;
-  }
-
-  &__label {
-    display: flex;
-    width: 100%;
-  }
-
-  &__input {
-    display: flex;
-    flex-grow: 1;
-    border: 1px solid var(--lightpink);
-    background: transparent;
-    padding: 0.5rem;
-
-    &::placeholder {
-      color: #adb5bd;
-    }
-  }
-
-  &__button {
-    color: #212529;
-    border-radius: 50rem;
-    padding: 0.5rem 1.5rem;
-    margin-left: 0.5rem;
-    letter-spacing: 1px;
-    background-color: var(--lightpink);
-    border-color: var(--lightpink);
-    text-transform: uppercase;
-    font-weight: 600;
-    border: none;
-
-    &:disabled {
-      opacity: 0.65;
-    }
-  }
-}
-
-.social {
-  margin-bottom: 3rem;
   &__link {
+    color: var(--red);
+  }
+}
+
+.fade {
+  position: absolute;
+  z-index: 2;
+  inset: 0;
+  background: linear-gradient(
+    rgba(250, 250, 250, 0) 30%,
+    rgba(250, 250, 250, 0.7) 90%,
+    rgb(250, 250, 250) 100%
+  );
+}
+
+.specification-table {
+  display: flex;
+  flex-direction: column;
+
+  &__row {
     display: inline-flex;
-    margin-right: 0.5rem;
-    border-radius: 50%;
-    width: 2em;
-    height: 2em;
-    background-color: var(--lightpink);
-    padding: 0.5rem;
   }
 
   &__svg {
-    background: transparent;
-    margin: 0 auto;
-    fill: var(--blue);
-  }
-}
-
-.sitemap {
-  &__nav {
-    flex: 1 1;
-  }
-
-  &__groups {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    padding: 0;
-  }
-
-  &__groups > * {
-    flex: 1 1 35%;
+    height: 100%;
     width: 100%;
   }
 
-  &__group {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    margin-bottom: 1rem;
-  }
-
-  &__group__ul {
-    display: flex;
-    flex-direction: column;
-    padding: 0;
-  }
-
-  &__group__title {
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-size: 0.8em;
-    padding-bottom: 0.5rem;
-  }
-
-  &__group__li {
-    padding: 0.25rem 0;
-    list-style-type: none;
-  }
-
-  &__group__a {
-    text-decoration: none;
-    color: var(--lightpink);
-  }
-}
-
-.copyright {
-  &__link {
-    color: var(--orange);
-    text-decoration: none;
+  &__title {
+    display: inline-block;
+    width: 1rem;
   }
 }
