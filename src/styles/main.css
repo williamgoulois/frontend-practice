@@ -1,7 +1,3 @@
-* {
-  box-sizing: border-box;
-}
-
 :root {
   --breakpoint-sm: 640px;
   --breakpoint-md: 768px;
@@ -84,10 +80,14 @@ a {
   padding: 1rem 0;
 }
 
+.small-title {
+  color: black;
+  font-weight: 600;
+}
+
 .buy-digital {
   display: inline-flex;
   justify-content: space-between;
-  width: 100%;
   padding: 1rem;
   background: var(--red);
   border-radius: 8px;
@@ -115,11 +115,14 @@ a {
   &__text {
     padding: 0.5em 0;
   }
+
+  &__link {
+    color: red;
+  }
 }
 
 .text-arrow {
   display: inline-flex;
-  color: red;
   font-weight: 600;
   padding: 1rem 0;
 
@@ -194,17 +197,234 @@ a {
   display: flex;
   flex-direction: column;
 
+  margin-top: 2rem;
+
   &__row {
+    display: flex;
+    padding: 0.75rem;
+  }
+
+  &__row:nth-child(2n + 1) {
+    background: lightgray;
+  }
+
+  &__span {
+    padding: 0 1rem;
+    width: 28px;
     display: inline-flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__text {
+    display: flex;
+    align-items: center;
+  }
+
+  &__title::after {
+    content: "\0009";
+    white-space: pre;
+  }
+}
+
+.play-modes {
+  display: flex;
+  flex-direction: column;
+  background: lightgray;
+  margin: 1rem 0;
+
+  &__title {
+    padding: 1rem 3rem;
+  }
+
+  &__images {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 1rem 0.5rem;
+  }
+
+  &__mode {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
   }
 
   &__svg {
-    height: 100%;
+    height: 2em;
+  }
+
+  &__disclaimer {
+    padding: 0 3rem 1.5rem;
+  }
+
+  &__support-link {
+    color: var(--red);
+    text-decoration: underline;
+  }
+}
+
+.rating {
+  background: lightgray;
+  padding: 1rem 3rem;
+  margin-bottom: 1rem;
+
+  &__title {
+    padding-bottom: 2rem;
+  }
+  &__title {
+    padding-bottom: 2rem;
+  }
+}
+.esrb {
+  display: flex;
+  &__svg {
+    width: 4em;
+    padding-right: 0.5rem;
+  }
+  &__description {
+    display: flex;
+    flex-direction: column;
+  }
+  &__separation {
+    border-color: black;
     width: 100%;
+  }
+}
+
+.online{
+  display: flex;
+  flex-direction: column;
+  background: lightgray;
+  padding: 1rem;
+
+  &__svg {
+    width: 12em;
+    padding-bottom: 1.5rem;
+  }
+
+  &__link {
+    color: black;
+  }
+
+  &__features {
+    padding: 1rem 0;
+    display: flex;
+  }
+
+  &__button {
+    background: var(--red);
+    color: white;
+    padding: 0.5rem 1rem;
+    margin-right: 0.5rem;
+    border-radius: 8px;
+  }
+}
+
+.legal {
+  padding: 4rem 0;
+
+  &__link {
+    color: var(--red);
+    text-decoration: underline;
+  }
+}
+
+.recommandation,.viewed-games {
+  border-top: 1px solid lightgray;
+  padding-bottom: 3rem;
+}
+.game-list {
+  display:flex;
+  padding-inline-start: 1.5em;
+  overflow-x:scroll;
+}
+
+.game-card {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  flex-shrink:0;
+  max-width: 33vw;
+  padding-right:1rem;
+
+  &__img {
+    border-radius: 4px;
+    width: 100%;
+    object-fit: contain;
+  }
+  &__date {
+    padding:0.5rem 0;
   }
 
   &__title {
-    display: inline-block;
-    width: 1rem;
+    padding:0.5rem 0;
+  }
+  &__price {
+    padding:0.5rem 0;
+  }
+  &__bottom {
+    display: inline-flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  &__heart {
+    color: var(--red);
+    height: 2em;
+    margin-left: 0.5rem;
+  }
+}
+
+.footer-nintendo {
+  background:black;
+  display:flex;
+  justify-content:center;
+  width:100%;
+  padding:2rem 0;
+  color:lightgray;
+
+  &__container {
+    display:flex;
+    flex-direction:column;
+  }
+
+  &__left {
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    padding:1rem;
+  }
+  &__contact {
+    display:flex;
+    justify-content:space-between;
+    padding-bottom:1rem;
+  }
+  &__contact-link {
+    color:lightgray;
+  }
+  &__social {
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    padding:0 3rem;
+  }
+&__social-links {
+  display:inline-grid;
+  grid-template-columns:repeat(4,1fr);
+    justify-content:space-between;
+  }
+  &__svg {
+    height:2em;
+    padding:0.5rem;
+    color:white;
+    background:blue;
+  }
+  &__esrb {
+    height:4em;
+    padding:1rem;
+  }
+  &__legal {
+    text-align:center;
   }
 }
